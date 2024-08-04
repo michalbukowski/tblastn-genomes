@@ -1,0 +1,7 @@
+name: tblastn-data
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - conda-forge::pandas=2.2.*
+

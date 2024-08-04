@@ -1,0 +1,8 @@
+name: tblastn-nextflow
+channels:
+  - conda-forge
+  - bioconda
+  - defaults
+dependencies:
+  - bioconda::nextflow=23.10.*
+
