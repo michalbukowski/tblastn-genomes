@@ -1,10 +1,9 @@
 ## Pipeline for automated translated BLAST searches in genomic sequences (tblastn-genomes)
 
-For details see the following publication:
+Nextflow pipeline for automated translated BLAST searches in genomic sequences. For a broader context, see the following publication:
 
-Bukowski M, Banasik M, Chlebicka K, Bednarczyk K, Żądło T, Dubin G, Władyka B. _Analysis of co-occurrence of toxin-antitoxin systems and antibiotic resistance determinants in Staphylococcus spp._ [awaiting publication]
-
-Nextflow pipeline for automated translated BLAST searches in genomic sequences.
+Bukowski M, Banasik M, Chlebicka K, Bednarczyk K, Bonar E, Sokołowska D, Żądło T, Dubin G, Władyka B. (2025) _Analysis of co-occurrence of type II toxin–antitoxin systems and antibiotic resistance determinants in Staphylococcus aureus_. mSystems 0:e00957-24.
+https://doi.org/10.1128/msystems.00957-24
 
 This pipeline utilises CARD data (located in the input directory):
 
@@ -17,12 +16,11 @@ Detailed comments on what and how each process do are provided in the `main.nf` 
 Values for technical parameters are defined in the `nextflow.config` file.
 
 ### 1. Environment
-In envs/ directory YML files describe conda environments used by the pipeline. If you want to install the latest versions of the packages, remove version designations from all YML files (`=X.X.*`).
+In envs/ directory YML files describe conda environments used by the pipeline. If you want to install the latest versions of the packages, remove version designations from all YML files (`=X.X.*`). The repository has been tested on `Ubuntu 22.04` using `conda 24.11`.
 
-Miniconda/Anaconda installation is a prerequisite. The default environment that must be created prior running the pipeplie is described in `nextflow.yml`. It utilises nexflow package, ver. 23.10.0. Run the following commands from the pipeline directory to create and activate the environment:
+Miniconda/Anaconda installation is a prerequisite. The `tblastn-nextflow` environment described in the `tblastn-nextflow.yml` file must be created prior running the pipepline. It utilises `nexflow 23.10` package. Run the following command from the pipeline directory to create the environment:
 ```
 conda env create -f envs/tblastn-nextflow.yml
-conda activate tblastn-nextflow
 ```
 
 ### 3. Directory structure and pipeline files
@@ -60,7 +58,8 @@ The pipeline encompasses the following stages:
 See comments in the template files for more details.
 
 ### 5. Running the pipeline
-To start the pipeline run the command from the pipeline directory:
+To start the pipeline activate the `tblastn-nextflow` environment and run Nextflow from the pipeline directory:
 ```
+conda activate tblastn-nextflow
 nextflow main.nf
 ```
