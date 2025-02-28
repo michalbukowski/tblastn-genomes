@@ -18,14 +18,14 @@ Values for technical parameters are defined in the `nextflow.config` file.
 ### 1. Environment
 In envs/ directory YML files describe conda environments used by the pipeline. If you want to install the latest versions of the packages, remove version designations from all YML files (`=X.X.*`). The repository has been tested on `Ubuntu 22.04` using `conda 24.11`.
 
-Miniconda/Anaconda installation is a prerequisite. The `tblastn-nextflow` environment described in the `tblastn-nextflow.yml` file must be created prior running the pipepline. It utilises `nexflow 23.10` package. Run the following command from the pipeline directory to create the environment:
+`Miniconda`/`Anaconda` installation is a prerequisite. The `tblastn-nextflow` environment described in the `tblastn-nextflow.yml` file must be created prior running the pipepline. It utilises `nexflow 23.10` package. Run the following command from the pipeline directory to create the environment:
 ```
 conda env create -f envs/tblastn-nextflow.yml
 ```
 
 ### 3. Directory structure and pipeline files
 ```
-your_pipeline_location/
+tblastn-genomes/
 ├── envs/
 │   ├── tblastn-nextflow.yml
 │   ├── tblastn-blast.yml
